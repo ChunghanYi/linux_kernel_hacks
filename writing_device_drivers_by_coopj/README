@@ -17,6 +17,15 @@
  */
 
 
+<Thanks to original author>
+===========================
+You can visit the Jerry Cooperstein's web page for more information of his books.
+  http://www.coopj.com/
+
+In this github, I'll publicize his works and make them to work well in recent kernel.
+Thank you so much !
+
+
 <How to build with buildroot ARM toolchain> 
 ============================================
 $ cd s_02
