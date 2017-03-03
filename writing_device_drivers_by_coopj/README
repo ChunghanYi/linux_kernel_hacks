@@ -32,6 +32,10 @@ $ ../genmake
 
 $ make
 
+(*) For more information, see the following web pages(unfortunately written in Korean).
+  http://slowbootkernelhacks.blogspot.kr/2017/03/linux-kernel-programming-guide.html
+  http://slowbootkernelhacks.blogspot.kr/2017/03/efficient-linux-kernel-4x-programming.html
+
 
 <Bug fixes for recent 4.x kernel and some code additions>
 ==========================================================
