@@ -16,6 +16,7 @@
  *
  */
 
+
 <How to build with buildroot ARM toolchain> 
 ============================================
 $ cd s_02
@@ -30,3 +31,40 @@ $ export PATH=$YOUR_PATH/buildroot/output/host/usr/bin:$PATH
 $ ../genmake
 
 $ make
+
+
+<Bug fixes for recent 4.x kernel and some code additions>
+==========================================================
+s_07/
+	bytestream-example.c, rbtree_test.c : newly added
+
+s_11/
+	lab4_periodic_timers.c : fixed 
+
+s_14/
+	lab2_proc.c, lab3_proc_solB.c, lab4_proc_sig_solB.c, lab5_seqfile.c : fixed
+	lab3_proc_solA.c, lab4_proc_sig_solA.c : removed
+
+s_15/
+	kobject-example.c, kset-example.c : newly added(from kernel samples)
+
+s_18/
+	lab2_usermap.c, lab2_usermap_fast.c, lab4_relay_module.c : fixed(not tested)
+
+s_20/
+	*gpio*.[ch] : newly added
+
+s_24/
+	lab1_network.c : fixed
+
+s_25/
+	lab1_devices.c : fixed
+
+s_26/
+	lab1_transmit.c, lab1_transmit_simple.c, lab2_receive.c : fixed
+
+s_33/
+	* : removed
+
+s_35/
+	lab2_block.c : fixed(not tested)
