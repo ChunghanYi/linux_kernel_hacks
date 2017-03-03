@@ -1,0 +1,32 @@
+/*
+ * The code herein is: Copyright Jerry Cooperstein, 2012
+ *
+ * This Copyright is retained for the purpose of protecting free
+ * redistribution of source.
+ *
+ *     URL:    http://www.coopj.com
+ *     email:  coop@coopj.com
+ *
+ * The primary maintainer for this code is Jerry Cooperstein
+ * The CONTRIBUTORS file (distributed with this
+ * file) lists those known to have contributed to the source.
+ *
+ * This code is distributed under Version 2 of the GNU General Public
+ * License, which you should have received with the source.
+ *
+ */
+
+<How to build with buildroot ARM toolchain> 
+============================================
+$ cd s_02
+
+$ export KROOT=$YOUR_PATH/buildroot/output/build/linux-4.9
+$ export ARCH=arm
+$ export CROSS_COMPILE=arm-linux-
+$ export CC=arm-linux-gcc
+$ export LD=arm-linux-ld
+$ export PATH=$YOUR_PATH/buildroot/output/host/usr/bin:$PATH
+
+$ ../genmake
+
+$ make
