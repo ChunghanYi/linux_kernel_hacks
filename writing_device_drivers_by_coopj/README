@@ -17,8 +17,8 @@
  */
 
 
-<Thanks to original author>
-===========================
+<Thanks to the original author>
+================================
 You can visit the Jerry Cooperstein's web page for more information of his books.
   http://www.coopj.com/
 
@@ -75,6 +75,9 @@ s_25/
 
 s_26/
 	lab1_transmit.c, lab1_transmit_simple.c, lab2_receive.c : fixed
+
+s_27/
+	lab1_nl_routing.c, lab2_nl_receive_test.c, lab2_nl_sender.c : newly added from LPD_SOLUTIONS
 
 s_33/
 	* : removed
