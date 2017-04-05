@@ -84,3 +84,6 @@ s_33/
 
 s_35/
 	lab2_block.c : fixed(not tested)
+
+t_01/
+	*.c, *.py : newly added(drivers for some sensors)
