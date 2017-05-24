@@ -1,0 +1,85 @@
+/*
+ * The code herein is: Copyright Alberto Liberal, 2017
+ *
+ * This Copyright is retained for the purpose of protecting free
+ * redistribution of source.
+ *
+ *     URL:    https://github.com/ALIBERA/Linux_book_labs
+ *     email:  aliberal@arroweurope.com 
+ *
+ * The CONTRIBUTORS file (distributed with this
+ * file) lists those known to have contributed to the source.
+ *
+ * This code is distributed under Version 2 of the GNU General Public
+ * License, which you should have received with the source.
+ *
+ */
+
+
+/*********************************/
+/* Thanks to the original author */
+/*********************************/
+In this github, I've ported his codes to work well in the recent linux kernel 4.x.
+And I've verified some drivers on RIoT board(NXP i.MX6 Solo processor).
+Thank you so much !
+
+
+/**********************/
+/* Some modifications */
+/**********************/
+Top Makefile and directories added
+ 
+lab01/
+	kernel module recipe example: newly added
+
+lab02/
+	imx6dl-riotboard.dts added
+
+lab03/
+
+lab04/
+
+lab05/
+
+lab06/
+
+lab07/
+
+lab08/
+
+lab09/
+
+lab10/
+	-> some warning and errors messages fixed for kernel 4.x
+
+
+/**********************************/
+/* How to setup yocto environment */
+/**********************************/
+$ source /opt/poky/2.1.2/environment-setup-armv7a-neon-poky-linux-gnueabi
+	=> Setup poky toolchain environments.
+
+$ bitbake -e virtual/kernel | grep ^WORKDIR=
+	=> Let's find the kernel working directory
+
+$ export KERNEL_SRC=$YOUR_PATH/fsl-community-bsp/imx6dl-riotboard/tmp/work/imx6dl_riotboard-poky-linux-gnueabi/linux-fslc/4.4+gitAUTOINC+928f8d55df-r0/build
+	=> Setup kernel root path
+
+
+/********************/
+/* How to build all */
+/********************/
+$ make
+	=> Build all kernel modules
+
+
+/*******************************/
+/* How to build each directory */
+/*******************************/
+$ cd lab3
+$ ../genmake
+$ make
+
+
+May the source be with you !
+chunghan.yi@gmail.com
