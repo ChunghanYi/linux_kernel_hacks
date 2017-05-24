@@ -49,11 +49,11 @@ static void ADC_trigger_int(struct work_struct *work_s)
 
 static const struct iio_chan_spec ltc2422_channel[] = {
 	{
-		.type		= IIO_VOLTAGE,
+		.type	= IIO_VOLTAGE,
 		.indexed	= 1,
-		.output		= 1,
+		.output	= 1,
 		.channel	= 0,
-		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW),
+		.info_mask_separate	= BIT(IIO_CHAN_INFO_RAW),
 	}
 };
 

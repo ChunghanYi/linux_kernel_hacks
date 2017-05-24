@@ -27,13 +27,13 @@ static void ioaccel_poll(struct input_polled_dev *pl_dev)
 
 	val = i2c_smbus_read_byte_data(ioaccel->i2c_client, OUT_X_MSB);
 
-	if ( (val > 0x10) && (val < 0x20) ) {
+	if ((val > 0x10) && (val < 0x20)) {
 		input_event(ioaccel->polled_input->input, EV_KEY, KEY_1, 1);
 	} else {
 		input_event(ioaccel->polled_input->input, EV_KEY, KEY_1, 0);
 	}
 
-	if ( (val > 0x20) && (val < 0xe0) ) {
+	if ((val > 0x20) && (val < 0xe0)) {
 		input_event(ioaccel->polled_input->input, EV_KEY, KEY_2, 1);
 	} else {
 		input_event(ioaccel->polled_input->input, EV_KEY, KEY_2, 0);
@@ -47,7 +47,7 @@ static void ioaccel_open(struct input_polled_dev *pl_dev)
 
 }
 
-static int ioaccel_probe(struct i2c_client *client, const struct i2c_device_id * id)
+static int ioaccel_probe(struct i2c_client *client, const struct i2c_device_id *id)
 {
 	/* declare an instance of the private structure */
 	struct ioaccel_dev * ioaccel;

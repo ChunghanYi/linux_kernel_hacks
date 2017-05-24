@@ -18,25 +18,25 @@ struct ltc2607_device {
 
 static const struct iio_chan_spec ltc2607_channel[] = {
 	{
-		.type		= IIO_VOLTAGE,
+		.type	= IIO_VOLTAGE,
 		.indexed	= 1,
-		.output		= 1,
+		.output	= 1,
 		.channel	= 0,
-		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW),
+		.info_mask_separate	= BIT(IIO_CHAN_INFO_RAW),
 	},
 	{
-		.type		= IIO_VOLTAGE,
+		.type	= IIO_VOLTAGE,
 		.indexed	= 1,
-		.output		= 1,
+		.output	= 1,
 		.channel	= 1,
-		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW),
+		.info_mask_separate	= BIT(IIO_CHAN_INFO_RAW),
 	},
 	{
-		.type		= IIO_VOLTAGE,
+		.type	= IIO_VOLTAGE,
 		.indexed	= 1,
-		.output		= 1,
+		.output	= 1,
 		.channel	= 2,
-		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW),
+		.info_mask_separate	= BIT(IIO_CHAN_INFO_RAW),
 	}
 };
 
