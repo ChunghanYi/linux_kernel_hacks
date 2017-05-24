@@ -157,7 +157,6 @@ static irqreturn_t adxl345_irq(int irq, void *handle)
 	 * If any of the events have been set an EV_ABS event is generated
 	 */
 	if (int_stat & (DATA_READY | WATERMARK)) {
-
 		if (pdata->fifo_mode)
 			samples = ENTRIES(AC_READ(ac, FIFO_STATUS)) + 1;
 		else
@@ -266,7 +265,6 @@ static ssize_t adxl345_rate_store(struct device *dev,
 }
 
 static DEVICE_ATTR(rate, 0664, adxl345_rate_show, adxl345_rate_store);
-
 
 static ssize_t adxl345_position_show(struct device *dev,
 		struct device_attribute *attr, char *buf)
@@ -522,8 +520,8 @@ static int adxl345_spi_read_block(struct device *dev,
 
 static const struct adxl345_bus_ops adxl345_spi_bops = {
 	.bustype	= BUS_SPI,
-	.write		= adxl345_spi_write,
-	.read		= adxl345_spi_read,
+	.write	= adxl345_spi_write,
+	.read	= adxl345_spi_read,
 	.read_block	= adxl345_spi_read_block,
 };
 
