@@ -25,8 +25,8 @@ static struct dma_chan *dma_m2m_chan;
 
 static struct completion dma_m2m_ok;
 
-static struct scatterlist sg3[1],sg4[1];
-static struct scatterlist sg[3],sg2[3];
+static struct scatterlist sg3[1], sg4[1];
+static struct scatterlist sg[3], sg2[3];
 
 #define SDMA_BUF_SIZE  (63*1024)
 
@@ -54,7 +54,7 @@ static void dma_sg_callback(void *data)
 {
 	unsigned int i;
 
-	pr_info("%s\n finished SG DMA transaction",__func__);
+	pr_info("%s\n finished SG DMA transaction", __func__);
 
 	for (i=0; i<SDMA_BUF_SIZE/4; i++) {
 		if (*(rbuf+i) != *(wbuf+i)) {
@@ -84,7 +84,7 @@ static void dma_sg_callback(void *data)
 
 static void dma_m2m_callback(void *data)
 {
-	pr_info("%s\n finished DMA coherent transaction" ,__func__);
+	pr_info("%s\n finished DMA coherent transaction" , __func__);
 
 	if (*(dma_src_coherent) != *(dma_dst_coherent)) {
 		pr_info("buffer copy failed!\n");
@@ -96,8 +96,8 @@ static void dma_m2m_callback(void *data)
 	complete(&dma_m2m_ok);
 }
 
-static ssize_t sdma_write(struct file * filp, const char __user * buf, size_t count,
-		loff_t * offset)
+static ssize_t sdma_write(struct file *filp, const char __user *buf, size_t count,
+		loff_t *offset)
 {
 	unsigned int *index1, *index2, *index3, i;
 	struct dma_async_tx_descriptor *dma_m2m_desc;
@@ -234,14 +234,14 @@ static int my_probe(struct platform_device *pdev)
 	}
 
 	dma_dst_coherent = dma_alloc_coherent(&pdev->dev, SDMA_BUF_SIZE,
-										&dma_dst, GFP_DMA);
+			&dma_dst, GFP_DMA);
 	if (dma_dst_coherent == NULL) {
 		pr_err("dma_alloc_coherent failed\n");
 		return -ENOMEM;
 	}
 
 	dma_src_coherent = dma_alloc_coherent(&pdev->dev, SDMA_BUF_SIZE,
-										&dma_src, GFP_DMA);
+			&dma_src, GFP_DMA);
 	if (dma_src_coherent == NULL) {
 		dma_free_coherent(&pdev->dev, SDMA_BUF_SIZE,
 				dma_dst_coherent, dma_dst);
@@ -304,7 +304,6 @@ static int __init demo_init(void)
 	if (ret_val != 0) {
 		pr_err("platform value returned %d\n", ret_val);
 		return ret_val;
-
 	}
 
 	return 0;

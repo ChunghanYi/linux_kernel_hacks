@@ -117,14 +117,14 @@ static int __init sdma_init_module(void)
 
 	wbuf = kzalloc(SDMA_BUF_SIZE, GFP_DMA);
 	if (!wbuf) {
-		pr_err("error allocating wbuf !!!!!!!!!!!\n");
+		pr_err("error allocating wbuf !\n");
 		return -ENOMEM;
 	}
 
 	rbuf = kzalloc(SDMA_BUF_SIZE, GFP_DMA);
 	if (!rbuf) {
 		kfree(wbuf);
-		pr_err("error allocating rbuf !!!!!!!!!!!\n");
+		pr_err("error allocating rbuf !\n");
 		return -ENOMEM;
 	}
 
