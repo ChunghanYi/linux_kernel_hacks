@@ -6,6 +6,7 @@
  *
  *     URL:    https://github.com/ALIBERA/Linux_book_labs
  *     email:  aliberal@arroweurope.com 
+ *     Book: Linux Driver Development for Embedded Processors
  *
  * The CONTRIBUTORS file (distributed with this
  * file) lists those known to have contributed to the source.
@@ -27,13 +28,13 @@ Thank you so much !
 /**********************/
 /* Some modifications */
 /**********************/
-Top Makefile and directories added
+Top Makefile and directories are added
  
 lab01/
 	kernel module recipe example: newly added
 
 lab02/
-	imx6dl-riotboard.dts added
+	imx6dl-riotboard.dts is added
 
 lab03/
 
@@ -48,9 +49,10 @@ lab07/
 lab08/
 
 lab09/
+	-> wiichuck.c file is added.
 
 lab10/
-	-> some warning and errors messages fixed for kernel 4.x
+	-> some warning and errors messages are fixed for kernel 4.x
 
 
 /**********************************/
