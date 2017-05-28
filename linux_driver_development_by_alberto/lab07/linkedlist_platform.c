@@ -1,7 +1,14 @@
 /* ************ LDD4EP: listing7-1: linkedlist_platform.c ************ */
 /*
- * This code is distributed under Version 2 of the GNU General Public
- * License, which you should have received with the source.
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  */
 
 #include <linux/module.h>
@@ -241,7 +248,7 @@ static void demo_exit(void)
 module_init(demo_init);
 module_exit(demo_exit);
 
-MODULE_LICENSE("GPL v2");
+MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Alberto Liberal <aliberal@arroweurope.com>");
 MODULE_DESCRIPTION("This is a platform driver that writes in and \
 	read from a linked list of several buffers");
