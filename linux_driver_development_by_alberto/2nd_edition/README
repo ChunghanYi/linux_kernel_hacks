@@ -1,0 +1,88 @@
+/*
+ * The code herein is: Copyright Alberto Liberal, 2018
+ *
+ * This Copyright is retained for the purpose of protecting free
+ * redistribution of source.
+ *
+ *     URL:    https://github.com/ALIBERA/linux_book_2nd_edition
+ *     email:  aliberal@arroweurope.com 
+ *     Book: Linux Driver Development for Embedded Processors(2nd edition)
+ *
+ * The CONTRIBUTORS file (distributed with this
+ * file) lists those known to have contributed to the source.
+ *
+ * This code is distributed under the GNU General Public
+ * License, which you should have received with the source.
+ *
+ */
+
+
+/*********************************/
+/* Thanks to the original author */
+/*********************************/
+In this github, I've verified his codes to work well in the linux kernel 4.19 for STM32MP1 processor(STM32MP157C Discovery Kit).
+Thank you so much !
+
+
+/**********************************/
+/* How to setup yocto environment */
+/**********************************/
+$ ./st-image-weston-openstlinux-weston-stm32mp1-x86_64-toolchain-3.1-openstlinux-5.4-dunfell-mp1-20-06-24.sh
+	=> install yocto SDK for ST openlinux
+
+$ . /opt/st/stm32mp1/3.1-openstlinux-5.4-dunfell-mp1-20-06-24/environment-setup-cortexa7t2hf-neon-vfpv4-ostl-linux-gnueabi
+	=> Setup poky toolchain environments.
+
+/****************************************/
+/* How to download & build linux kernel */
+/****************************************/
+After installation for yocto SDK, you should download and build linux kernel for STM32MP1 project.
+Yon can see the following file for the exact steps.
+ -> https://github.com/ALIBERA/linux_book_2nd_edition/blob/master/Linux_4.19_STM32MP1_practical_labs.pdf
+
+And also, you can refer to the following site.
+ -> https://wiki.st.com/stm32mpu/wiki/Getting_started/STM32MP1_boards/STM32MP157x-DK2
+
+
+/********************/
+/* How to build all */
+/********************/
+
+If the kernel directory path has been decided, edit a Makefile to fix the KERNEL_DIR string.
+
+#KERNEL_DIR ?= $(HOME)/STM32MP15-Ecosystem-v1.2.0/Developer-Package/stm32mp1-openstlinux-20-02-19/sources/arm-ostl-linux-gnueabi/linux-stm32mp-4.19-r0/linux-4.19.94
+->
+KERNEL_DIR ?= $YOUR_PATH/linux-4.19.94
+
+$ make
+	=> Build all kernel modules
+
+$ ls -l *.ko
+-rw-r--r-- 1 chyi chyi 204500  7월 16 17:36 adxl345_stm32mp1.ko
+-rw-r--r-- 1 chyi chyi 199716  7월 16 17:36 adxl345_stm32mp1_iio.ko
+-rw-r--r-- 1 chyi chyi 135680  7월 16 17:36 hellokeys_stm32mp1.ko
+-rw-r--r-- 1 chyi chyi  66660  7월 16 17:36 helloworld_stm32mp1.ko
+-rw-r--r-- 1 chyi chyi 130660  7월 16 17:36 helloworld_stm32mp1_char_driver.ko
+-rw-r--r-- 1 chyi chyi 133868  7월 16 17:36 helloworld_stm32mp1_class_driver.ko
+-rw-r--r-- 1 chyi chyi  67580  7월 16 17:36 helloworld_stm32mp1_with_parameters.ko
+-rw-r--r-- 1 chyi chyi  70760  7월 16 17:36 helloworld_stm32mp1_with_timing.ko
+-rw-r--r-- 1 chyi chyi 148316  7월 16 17:36 i2c_stm32mp1_accel.ko
+-rw-r--r-- 1 chyi chyi 109516  7월 16 17:36 int_stm32mp1_key.ko
+-rw-r--r-- 1 chyi chyi 161676  7월 16 17:36 int_stm32mp1_key_wait.ko
+-rw-r--r-- 1 chyi chyi 154416  7월 16 17:36 io_stm32mp1_expander.ko
+-rw-r--r-- 1 chyi chyi 180604  7월 16 17:36 keyled_stm32mp1_class.ko
+-rw-r--r-- 1 chyi chyi 149280  7월 16 17:36 ledRGB_stm32mp1_class_platform.ko
+-rw-r--r-- 1 chyi chyi 158252  7월 16 17:36 ledRGB_stm32mp1_platform.ko
+-rw-r--r-- 1 chyi chyi 141972  7월 16 17:36 led_stm32mp1_UIO_platform.ko
+-rw-r--r-- 1 chyi chyi 147272  7월 16 17:36 linkedlist_stm32mp1_platform.ko
+-rw-r--r-- 1 chyi chyi 179640  7월 16 17:36 ltc2422_stm32mp1_dual.ko
+-rw-r--r-- 1 chyi chyi 193864  7월 16 17:36 ltc2422_stm32mp1_trigger.ko
+-rw-r--r-- 1 chyi chyi 122148  7월 16 17:36 ltc2607_stm32mp1_dual_device.ko
+-rw-r--r-- 1 chyi chyi 124648  7월 16 17:36 ltc3206_stm32mp1_led_class.ko
+-rw-r--r-- 1 chyi chyi 130168  7월 16 17:36 misc_stm32mp1_driver.ko
+-rw-r--r-- 1 chyi chyi 170412  7월 16 17:36 sdma_stm32mp1_m2m.ko
+-rw-r--r-- 1 chyi chyi 169652  7월 16 17:36 sdma_stm32mp1_mmap.ko
+
+-- -- --
+May the source be with you !
+chunghan.yi@gmail.com
