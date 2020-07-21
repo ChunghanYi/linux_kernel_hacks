@@ -63,7 +63,7 @@ mycdrv_rw(struct file *file, unsigned long buf, size_t lbuf, loff_t * ppos,
 	rc = get_user_pages(current, current->mm,
 			    (unsigned long)buf, npages, 1, 0, pages, NULL);
 #else
-	rc = get_user_pages(current->mm, npages, 1, pages, NULL);
+	rc = get_user_pages((unsigned long)buf, npages, 1, pages, NULL);
 #endif
 	up_read(&current->mm->mmap_sem);
 	pr_info(" I received %d pages from the user \n", rc);
