@@ -49,6 +49,7 @@
 #include <linux/signal.h>
 #include <linux/sched.h>
 #include <linux/slab.h>
+#include <linux/sched/signal.h>
 
 #define NODE_DIR "my_sig_dir"
 #define NODE_1 "pid"

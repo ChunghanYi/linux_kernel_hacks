@@ -89,6 +89,7 @@ EndSection
 #include <linux/delay.h>
 #include <linux/device.h>
 #include <linux/sched.h>
+#include <linux/sched/signal.h>
 
 #define MYDEV_NAME "mymouse"
 

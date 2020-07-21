@@ -42,6 +42,7 @@
 #include <linux/module.h>
 #include <linux/interrupt.h>
 #include <linux/poll.h>
+#include <linux/sched/signal.h>
 
 /* either of these (but not both) will work */
 //#include "lab_char.h"
