@@ -7,5 +7,5 @@
     For more information, visit my blog please.
        https://slowbootkernelhacks.blogspot.com/
 
-May the source be with you~ 
-SlowBoot
+	May the source be with you~ 
+	SlowBoot 😎
