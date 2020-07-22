@@ -44,6 +44,8 @@ $ make
 (*) For more information, see the following web pages(unfortunately written in Korean).
   http://slowbootkernelhacks.blogspot.kr/2017/03/linux-kernel-programming-guide.html
   http://slowbootkernelhacks.blogspot.kr/2017/03/efficient-linux-kernel-4x-programming.html
+  and
+  https://slowbootkernelhacks.blogspot.com/2020/07/linux-kernel-programming-gpio-interrupt.html
 
 
 <Bug fixes for recent 4.x kernel and some code additions>
@@ -54,6 +56,7 @@ s_07/
 s_11/
 	lab4_periodic_timers.c : fixed 
 	new/* : some new timer examples are added
+		-> ../../genmake
 
 s_14/
 	lab2_proc.c, lab3_proc_solB.c, lab4_proc_sig_solB.c, lab5_seqfile.c : fixed
@@ -68,6 +71,7 @@ s_18/
 s_20/
 	*gpio*.[ch] : newly added
 	new/* : some platform drivers(w/ device tree) are added
+		-> ../../genmake
 
 s_24/
 	lab1_network.c : fixed
