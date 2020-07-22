@@ -53,6 +53,7 @@ s_07/
 
 s_11/
 	lab4_periodic_timers.c : fixed 
+	new/* : some new timer examples are added
 
 s_14/
 	lab2_proc.c, lab3_proc_solB.c, lab4_proc_sig_solB.c, lab5_seqfile.c : fixed
@@ -66,6 +67,7 @@ s_18/
 
 s_20/
 	*gpio*.[ch] : newly added
+	new/* : some platform drivers(w/ device tree) are added
 
 s_24/
 	lab1_network.c : fixed
