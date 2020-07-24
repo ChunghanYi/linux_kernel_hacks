@@ -1,0 +1,79 @@
+/*
+ * The code herein is: Copyright John Madieu, 2017
+ *
+ * This Copyright is retained for the purpose of protecting free
+ * redistribution of source.
+ *
+ *     URL:   https://github.com/john-madieu
+ *     email: john.madieu@gmail.com
+ *     Book:  Linux Device Drivers Development
+ *
+ * The primary maintainer for this code is John Madieu 
+ * The CONTRIBUTORS file (distributed with this
+ * file) lists those known to have contributed to the source.
+ *
+ * This code is distributed under the GNU General Public
+ * License, which you should have received with the source.
+ *
+ */
+
+
+<Thanks to the original author>
+================================
+You can visit the John Madieu's github page for more information of his books.
+  https://github.com/john-madieu
+
+In this github, I'll publicize his works and make them to work well in recent kernel.
+Thank you so much !
+
+
+<How to build it with buildroot ARM toolchain> 
+==============================================
+$ git clone git://git.buildroot.net/buildroot
+	-> download a recent buildroot
+
+$ export KROOT=$YOUR_PATH/buildroot/output/build/linux-5.7.1
+$ export ARCH=arm
+$ export CROSS_COMPILE=arm-none-linux-gnueabihf-
+$ export CC=arm-none-linux-gnueabihf-gcc
+$ export LD=arm-none-linux-gnueabihf-ld
+$ export PATH=$YOUR_PATH/buildroot/output/host/usr/bin:$PATH
+
+$ vi genmake
+	-> fix the following codes ..
+(before)
+...
+if [[ -z $KROOT ]] ; then
+    KROOT=/lib/modules/$(uname -r)/build
+    [[ ! -d $KROOT ]] && KROOT=/usr/src/linux-$(uname -r)
+#   KROOT=$YOUR_PATH/buildroot/output/build/linux-5.7.1
+fi
+...
+~
+=>
+(after)
+...
+if [[ -z $KROOT ]] ; then
+#    KROOT=/lib/modules/$(uname -r)/build
+#    [[ ! -d $KROOT ]] && KROOT=/usr/src/linux-$(uname -r)
+   KROOT=/home/yourid/workspace/buildroot/output/build/linux-5.7.1
+fi
+...
+~
+
+$ cd chapter-02
+$ ../genmake
+$ make
+
+
+<Bug fixes for recent 4.x/5.x kernel and some code additions>
+=============================================================
+chapter-03/
+	std-timer.c : add some version check codes for timer_setup() function
+
+chapter-10/
+	iio-dummy-random.c : fixed for kernel 5.7.1
+
+chapter-15/
+	fake-gpio-chip.c, mcp23016.c : fixed for kernel 5.7.1
+
